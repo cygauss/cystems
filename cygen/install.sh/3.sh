@@ -3,9 +3,8 @@ eselect kernel set 1
 genkernel --mountboot --install all
 echo -e "/dev/nvme0n1p1 /boot vfat defaults,noatime 0 2\n/dev/nvme0n1p2 / ext4 noatime 0 1" >> /etc/fstab
 echo cygen > /etc/hostname
-emerge app-admin/sysklogd sys-process/cronie net-misc/chrony
-#dhcpcd
-#rc-update add dhcpcd default
+emerge app-admin/sysklogd sys-process/cronie net-misc/chrony net-misc/dhcpcd
+rc-update add dhcpcd default
 rc-update add sysklogd default
 rc-update add cronie default
 rc-update add chronyd default
