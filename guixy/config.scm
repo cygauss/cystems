@@ -33,13 +33,13 @@
 
   (file-systems (append
                  (list (file-system
-                         (device "/dev/nvme2n1p3")
+                         (device "/dev/nvme3n1p2")
                          (mount-point "/")
                          (type "ext4")
                          ;(dependencies mapped-devices)
 		       )
                        (file-system
-                         (device "/dev/nvme2n1p1")
+                         (device "/dev/nvme3n1p1")
                          (mount-point "/boot/efi")
                          (type "vfat")))
                  %base-file-systems))
