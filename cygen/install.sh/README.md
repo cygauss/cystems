@@ -1,4 +1,4 @@
-wget -L raw.githubusercontent.com/cygauss/cy-newgen/main/1.sh && bash 1.sh
+wget -L raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/1.sh && bash 1.sh
 
 chroot /mnt/gentoo
 
