@@ -1,8 +1,9 @@
-mkfs.fat -F32 /dev/nvme0n1p1
-mkfs.ext4 /dev/nvme0n1p2
-mount /dev/nvme0n1p2 /mnt
+mkfs.fat -F32 /dev/nvme2n1p1
+mkfs.ext4 /dev/nvme2n1p3
+mount /dev/nvme2n1p3 /mnt
 mkdir /mnt/boot
-mount /dev/nvme0n1p1 /mnt/boot
+mkdir /mnt/boot/efi
+mount /dev/nvme2n1p1 /mnt/boot/efi
 herd start cow-store /mnt
 mkdir /mnt/etc
 cd /mnt/etc
