@@ -7,6 +7,6 @@
 
 /cruxy/ crux
 
-/kiss/ kisslinux
+/kissy/ kisslinux
 
 /guixy/ gnu/guix
