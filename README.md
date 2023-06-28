@@ -1,2 +1,2 @@
 # awesome-linuxy
-/kernel config These are kinds of .config for kernel
+kernel config/ The tree of .config for kernel
