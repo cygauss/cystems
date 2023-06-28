@@ -1,7 +1,7 @@
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/4.sh
-mkfs.fat -F 32 /dev/nvme0n1p1
-mkfs.ext4 /dev/nvme0n1p2
-mount /dev/nvme0n1p2 /mnt/gentoo
+mkfs.fat -F 32 /dev/nvme2n1p1
+mkfs.ext4 /dev/nvme2n1p2
+mount /dev/nvme2n1p2 /mnt/gentoo
 cd /mnt/gentoo
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/2.sh
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/3.sh
