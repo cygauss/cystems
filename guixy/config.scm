@@ -20,7 +20,7 @@
   ;; Partition mounted on /boot/efi.
   (bootloader (bootloader-configuration
                 (bootloader grub-efi-removable-bootloader)
-                (targets '("/boot"))
+                (targets '("/boot/efi"))
                 (keyboard-layout keyboard-layout)))
 
   ;; Specify a mapped device for the encrypted root partition.
@@ -33,14 +33,14 @@
 
   (file-systems (append
                  (list (file-system
-                         (device "/dev/nvme0n1p2")
+                         (device "/dev/nvme2n1p3")
                          (mount-point "/")
                          (type "ext4")
                          ;(dependencies mapped-devices)
 		       )
                        (file-system
-                         (device "/dev/nvme0n1p1")
-                         (mount-point "/boot")
+                         (device "/dev/nvme2n1p1")
+                         (mount-point "/boot/efi")
                          (type "vfat")))
                  %base-file-systems))
 
