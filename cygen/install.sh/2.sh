@@ -1,4 +1,4 @@
-mount /dev/nvme0n1p1 /boot
+mount /dev/nvme2n1p1 /boot/efi
 emerge-webrsync
 emerge --update --deep --newuse @world
 echo "Asia/Chongqing" > /etc/timezone
