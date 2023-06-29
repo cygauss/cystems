@@ -9,4 +9,4 @@ mkdir /mnt/etc
 cd /mnt/etc
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/guixy/config.scm
 cd -
-guix system init /mnt/etc/config.scm /mnt --substitute-urls='https://mirror.sjtu.edu.cn/guix/'
+guix system init /mnt/etc/config.scm /mnt --substitute-urls='http://mirror.sjtu.edu.cn/guix/'
