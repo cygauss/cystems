@@ -23,20 +23,12 @@
                 (targets '("/boot/efi"))
                 (keyboard-layout keyboard-layout)))
 
-  ;; Specify a mapped device for the encrypted root partition.
-  ;; The UUID is that returned by 'cryptsetup luksUUID'.
-  ;(mapped-devices
-   ;(list (mapped-device
-    ;      (source (uuid "12345678-1234-1234-1234-123456789abc"))
-     ;     (target "my-root")
-      ;    (type luks-device-mapping))))
 
   (file-systems (append
                  (list (file-system
                          (device "/dev/nvme3n1p2")
                          (mount-point "/")
                          (type "ext4")
-                         ;(dependencies mapped-devices)
 		       )
                        (file-system
                          (device "/dev/nvme3n1p1")
@@ -44,10 +36,6 @@
                          (type "vfat")))
                  %base-file-systems))
 
-  ;; Specify a swap file for the system, which resides on the
-  ;; root file system.
-  ;(swap-devices (list (swap-space
-   ;                    (target "/swapfile"))))
 
   ;; Create user `bob' with `alice' as its initial password.
   ;(users (cons (user-account
