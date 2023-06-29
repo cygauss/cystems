@@ -1,16 +1,12 @@
-export CYESP=/dev/nvme2n1p1
-export CYROOT=/dev/nvme2n1p2
-export CYSTAGE=http://mirrors.ustc.edu.cn/gentoo/releases/amd64/autobuilds/20230625T165009Z/stage3-amd64-openrc-20230625T165009Z.tar.xz
-#
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/4.sh
-mkfs.fat -F 32 $CYESP
-mkfs.ext4 $CYROOT
-mount $CYROOT /mnt/gentoo
+#mkfs.fat -F 32 /dev/nvme2n1p1
+#mkfs.ext4 /dev/nvme2n1p2
+#mount /dev/nvme2n1p2 /mnt/gentoo
 cd /mnt/gentoo
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/2.sh
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/3.sh
 chronyd -q
-wget $CYSTAGE
+#wget http://mirrors.ustc.edu.cn/gentoo/releases/amd64/autobuilds/20230625T165009Z/stage3-amd64-openrc-20230625T165009Z.tar.xz
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
 cd -
 rm /mnt/gentoo/etc/portage/make.conf
