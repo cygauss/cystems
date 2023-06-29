@@ -1,4 +1,6 @@
-wget -L raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/1.sh && bash 1.sh
+stage3镜像 请去http://mirrors.ustc.edu.cn/gentoo/releases/amd64/autobuilds/latest-stage3-amd64-openrc.txt
+
+wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/1.sh && bash 1.sh
 
 chroot /mnt/gentoo
 
@@ -16,6 +18,5 @@ exit
 
 bash 4.sh
 
-硬性修改 stage3镜像 请去http://mirrors.ustc.edu.cn/gentoo/releases/amd64/autobuilds/latest-stage3-amd64-openrc.txt 确认
 
-dracut kver
+
