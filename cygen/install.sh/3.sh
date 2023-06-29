@@ -8,7 +8,6 @@ make menuconfig
 make -j24 && make modules_install
 make install
 cd -
-#echo -e "/dev/nvme2n1p1 /boot/efi vfat defaults,noatime 0 2\n/dev/nvme2n1p2 / ext4 noatime 0 1\ntmpfs /tmp tmpfs size=128G,mode=775 0 0" >> /etc/fstab
 echo cygen > /etc/hostname
 emerge app-admin/sysklogd sys-process/cronie net-misc/chrony net-misc/dhcpcd sys-boot/grub
 rc-update add dhcpcd default
