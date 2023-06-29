@@ -1,7 +1,8 @@
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/4.sh
 #mkfs.fat -F 32 /dev/nvme2n1p1
 #mkfs.ext4 /dev/nvme2n1p2
-#mount /dev/nvme2n1p2 /mnt/gentoo
+#echo -e "/dev/nvme2n1p1 /boot/efi vfat defaults,noatime 0 2\n/dev/nvme2n1p2 / ext4 noatime 0 1\ntmpfs /tmp tmpfs size=128G,mode=775 0 0" >> /etc/fstab
+mount /mnt/gentoo
 cd /mnt/gentoo
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/2.sh
 wget raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/install.sh/3.sh
@@ -16,6 +17,7 @@ cd -
 mkdir --parents /mnt/gentoo/etc/portage/repos.conf
 cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+cp /etc/fstab /mnt/gentoo/etc/fstab
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
 mount --make-rslave /mnt/gentoo/sys
