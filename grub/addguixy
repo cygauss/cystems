@@ -1,0 +1,6 @@
+# Add it to /etc/grub.d/40-custom,it reload the boot.cfg of guix's.!change (hd3,gpt2).Esc can bring it back to gentoo's boot.cfg,but backround pic stay.
+menuentry "GUIX" {
+  insmod part_gpt
+  insmod ext2
+# configfile (hd3,gpt2)/boot/grub/grub.cfg
+}
