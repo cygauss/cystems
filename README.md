@@ -1,10 +1,12 @@
-# awesome-linuxy
+# cystems
 
 which side you on boy? https://zhuanlan.zhihu.com/p/601817136
 
-/kernel config/ The tree of .config for kernel
+/kernelconfig/ The tree of .config for kernel
 
-/ledecy/ ledecy(openwrt)
+/net/ network setup
+
+/net/ledecy lede(openwrt)
 
 /cygen/ gentoo
 
