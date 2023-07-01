@@ -7,3 +7,13 @@
  关闭内核上的autoconf,accept_ra后，使用static无问题，但是若使用dhcp客户端，还是会接收ip，甚至指示为ra的slaac的，而非dhcp的。
 
  最终选择在ledecy修正+内核上屏蔽 + 不使用任何网络管理器
+
+ 内核修正项众说纷纭，使用 
+ # disable IPv6 address auto-configuration
+
+ net.ipv6.conf.eth0.autoconf=0
+	
+ # disable IPv6 acceptance of default router in RA
+ 
+ net.ipv6.conf.eth0.accept_ra_defrtr=0
+ 到sysctl.conf
