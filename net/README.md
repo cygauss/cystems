@@ -18,4 +18,4 @@
  net.ipv6.conf.eth0.accept_ra_defrtr=0
  到sysctl.conf
 
-windows下怎么处理，已经加入到
+windows下怎么处理，已经加入到/windows文件中
