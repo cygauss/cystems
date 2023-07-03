@@ -10,7 +10,7 @@ chronyd -q
 #wget http://mirrors.ustc.edu.cn/gentoo/releases/amd64/autobuilds/20230625T165009Z/stage3-amd64-openrc-20230625T165009Z.tar.xz
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
 cd -
-#echo -e "/dev/nvme2n1p1 /boot/efi vfat defaults,noatime 0 2\n/dev/nvme2n1p2 / ext4 noatime 0 1\ntmpfs /tmp tmpfs size=128G,mode=775 0 0" >> /mnt/etc/fstab
+#echo -e "/dev/nvme2n1p1 /boot/efi vfat defaults,noatime 0 2\n/dev/nvme2n1p2 / ext4 noatime 0 1\ntmpfs /tmp tmpfs size=128G,mode=775 0 0" >> /mnt/gentoo/etc/fstab
 rm /mnt/gentoo/etc/portage/make.conf
 cd /mnt/gentoo/etc/portage/
 wget https://raw.githubusercontent.com/cygauss/awesome-linuxy/main/cygen/make.conf
