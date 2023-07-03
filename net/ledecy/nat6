@@ -19,7 +19,7 @@ START=99
 # -------
  
 # Use temporary addresses (IPv6 privacy extensions) for outgoing connections? Yes: 1 / No: 0
-PRIVACY=0
+PRIVACY=1
  
 # Maximum number of attempts before this script will stop in case no IPv6 route is available
 # This limits the execution time of the IPv6 route lookup to (MAX_TRIES+1)*(MAX_TRIES/2) seconds. The default (15) equals 120 seconds.
