@@ -1,5 +1,4 @@
-echo "sys-kernel/git-sources ~amd64" > /etc/portage/package.accept_keywords/00-manual
-emerge linux-firmware git-sources
+ACCEPT_KEYWORDS="~amd64" emerge linux-firmware git-sources
 eselect kernel set 1
 passwd
 cd /usr/src/linux
