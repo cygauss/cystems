@@ -1,0 +1,1 @@
+1.config 在ori上加上了ax201的boobs,同时去除掉了nouveau，且去除了initramfs
