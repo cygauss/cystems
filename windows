@@ -35,3 +35,7 @@ netsh interface ipv6 set interface X routerdiscovery=disabled
 #To disable privacy execute (command works globally for all interfaces):
 netsh interface ipv6 set privacy state=disable store=persistent
 netsh interface ipv6 set global randomizeidentifiers=disabled store=persistent
+
+
+
+关闭休眠时的swap文件
