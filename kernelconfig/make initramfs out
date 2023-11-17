@@ -1,0 +1,24 @@
+1.准备一个能将你要用到的硬件全部驱动起来的通用linux发行版
+2.将你要使用到的硬件都插上使用一遍，鼠标，键盘，游戏手柄，摄像头，存储卡，手机，蓝牙等等硬件设备和某些软件，比如虚拟机，还有代理软件全都用一遍。
+3.下载一份linux内核的源码The Linux Kernel Archives
+4.切换root用户
+
+su
+5.将下载下来的内核源码进行解压
+
+tar xpvf linux-*.tar.xz
+cd linux-*
+6.保证你需要使用的硬件全都插上且功能正常，还有如虚拟机以及代理软件的功能是正常的，然后执行命令
+
+make localyesconfig
+在执行过程中会提示你是否需要某些更改，直接一路回车就行
+7.上面命令执行完成后将会在当前目录下生成一个.config文件，这个文件就是适合你电脑硬件的内核配置文件了
+8.要保证你的内核配置文件是不需要initramfs启动的，你还需要一部分操作,执行命令
+
+make menuconfig
+找到File System 将你需要使用的文件系统支持打开
+然后找到Enable loadable module support进去，除了强制标记的选项，仅留下一项Module unloading其他全部取消选中
+再找到General setup，关闭initramfs的选项就在这里面
+现在的Initramfs RAM filesystem and RAM disk （initramfs/initrd）support选项是强制选中的，找到Emed bootconfig file in the kernel将其选中，上面的Initramfs RAM filesystem and RAM disk （initramfs/initrd）support就会变成可选状态，将其取消选中
+然后就可以一直Exit，提示保存的时候选择yes就可以了
+到这里你就得到了一份无需initramfs启动的linux内核配置文件，虽然它现在还很臃肿，但是和通用发行版的内核配置相比它已经很精简了
