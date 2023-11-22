@@ -6,6 +6,7 @@
 ##如果任何受影响的模块是从 initramfs 加载的，那么您需要将适当的 .conf 文件添加到 mkinitcpio.conf 中的 FILES
 echo "options nvidia_drm modeset=1 fbdev=1" > /etc/modprobe.d/nvidia_drm.conf
 nano /etc/mkinitcpio.conf
+mkdir /etc/pacman.d/hooks/
 cd /etc/pacman.d/hooks/
 curl -O raw.githubusercontent.com/cygauss/cystems/main/archy/nvidia.hook
 cd -
