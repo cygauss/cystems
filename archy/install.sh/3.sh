@@ -8,7 +8,7 @@ echo "options nvidia_drm modeset=1 fbdev=1" > /etc/modprobe.d/nvidia_drm.conf
 nano /etc/mkinitcpio.conf
 mkdir /etc/pacman.d/hooks/
 cd /etc/pacman.d/hooks/
-curl -O raw.githubusercontent.com/cygauss/cystems/main/archy/nvidia.hook
+curl -O https://raw.githubusercontent.com/cygauss/cystems/main/archy/nvidia.hook
 cd -
 ##prime-run前缀脚本以用独显运行
 pacman -S nvidia nvidia-prime
