@@ -33,19 +33,25 @@ EDITOR="nano" visudo
 echo -e "Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch\nServer = http://mirrors.pku.edu.cn/archlinuxcn/$arch" >> /etc/pacman.d/archlinuxcn-mirrorlist
 nano /etc/pacman.conf
 pacman -Sy archlinuxcn-keyring
-##yay可以统筹aur和bin-repos
-pacman -S yay
+##yay可以统筹aur和bin-repos,wget
+pacman -S yay wget
 ##显示配置
-##nvidia(prime-run前缀脚本以用独显运行)
-pacman -S nvidia nvidia-prime
-##把kms 从 /etc/mkinitcpio.conf 里的HOOKS 数组中移除，并 重新生成 initramfs。
+##nvidia
+
+  
+
+
+##为了避免更新 NVIDIA 驱动之后忘了更新 initramfs，你可以使用 Pacman Hooks：
+##安装后把kms 从 /etc/mkinitcpio.conf 里的HOOKS 数组中移除，并 重新生成 initramfs。
 ##To enable DRM (Direct Rendering Manager) kernel mode setting, set modeset=1 and fbdev=1 kernel module parameters for the nvidia_drm module.
 ##如果任何受影响的模块是从 initramfs 加载的，那么您需要将适当的 .conf 文件添加到 mkinitcpio.conf 中的 FILES
 echo "options nvidia_drm modeset=1 fbdev=1" > /etc/modprobe.d/nvidia_drm.conf
 nano /etc/mkinitcpio.conf
-mkinitcpio -P
+cd /etc/pacman.d/hooks/
+wget  
+##prime-run前缀脚本以用独显运行
+pacman -S nvidia nvidia-prime
 reboot
-##为了避免更新 NVIDIA 驱动之后忘了更新 initramfs，你可以使用 Pacman Hooks!https://wiki.archlinuxcn.org/wiki/NVIDIA#Pacman_%E9%92%A9%E5%AD%90
 ##wayland
 ##GUIlib
 pacman -S gtk4 qt6-wayland qt5ct
