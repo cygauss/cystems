@@ -13,7 +13,8 @@ arch-chroot /mnt
 ##chroot会终止脚本
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
 hwclock --systohc
-echo "en_SG.UTF-8" >> /etc/locale.gen
+##虽然只使用LANG=sg，但是一些软件不自带语言环境，需要locale提供，故选用中文
+echo -e "en_SG.UTF-8\nzh_CN.UTF-8" >> /etc/locale.gen
 locale-gen
 echo "LANG=en_SG.UTF-8" >> /etc/locale.conf
 echo "Archy" >> /etc/hostname
