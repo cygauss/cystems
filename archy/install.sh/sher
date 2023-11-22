@@ -1,0 +1,3 @@
+curl -O raw.githubusercontent.com/cygauss/cystems/main/archy/install.sh/$CYSH.sh
+bash $CYSH.sh
+rm  $CYSH.sh
