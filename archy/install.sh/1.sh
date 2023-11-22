@@ -11,5 +11,6 @@ pacstrap -K /mnt base linux linux-firmware networkmanager efibootmgr intel-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 cd /mnt
 curl -O https://raw.githubusercontent.com/cygauss/cystems/main/archy/install.sh/1-1.sh
+curl -O https://raw.githubusercontent.com/cygauss/cystems/main/archy/install.sh/sher
 nano 1-1.sh
 cd -
