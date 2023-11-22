@@ -1,42 +1,18 @@
-##安装
-#net iwctl station wlan0 connect ssid
-timedatectl
-#cfdisk /dev/nvme0n1
-#mkfs.fat -F 32 /dev/nvme0n1p1 && mkfs.ext4 /dev/nvme0n1p2
-#mount /dev/nvme0n1p2 /mnt 
-mkdir /mnt/boot
-#mount /dev/nvme0n1p1 /mnt
-echo -e "Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch\nServer = http://mirrors.pku.edu.cn/archlinux/$repo/os/$arch" > /etc/pacman.d/mirrorlist
-pacstrap -K /mnt base linux linux-firmware networkmanager efibootmgr intel-ucode
-genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt
-##chroot会终止脚本
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
-hwclock --systohc
-##虽然只使用LANG=sg，但是一些软件不自带语言环境，需要locale提供，故选用中文
-echo -e "en_SG.UTF-8 UTF-8\nzh_CN.UTF-8 UTF-8" >> /etc/locale.gen
-locale-gen
-echo "LANG=en_SG.UTF-8" >> /etc/locale.conf
-echo "Archy" >> /etc/hostname
-passwd
-#efibootmgr -c -d /dev/nvme0n1p1 -l /vmlinuz-linux -L "Arch Linux" -u 'initrd=\intel-ucode.img initrd=\initramfs-linux.img root=/dev/nvme0n1p2 quiet rw nowatchdog'
-exit
-reboot
+##修改mirror和repo
+echo -e "Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/\$repo/os/\$arch\nServer = http://mirrors.pku.edu.cn/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
+echo -e "Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/\$arch\nServer = http://mirrors.pku.edu.cn/archlinuxcn/\$arch" > /etc/pacman.d/archlinuxcn-mirrorlist
+echo -e "[archlinuxcn]\nInclude = /etc/pacman.d/archlinuxcn-mirrorlist" >> /etc/pacman.conf
+##yay可以统筹aur和repos
+pacman -Sy archlinuxcn-keyring yay
 
-
-  
 ##用户配置
 pacman -S sudo nano
 useradd -m -G wheel cygauss
 passwd cygauss
 EDITOR="nano" visudo
-##基础下载工具
-##修改mirror和repo
-echo -e "Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch\nServer = http://mirrors.pku.edu.cn/archlinuxcn/$arch" >> /etc/pacman.d/archlinuxcn-mirrorlist
-nano /etc/pacman.conf
-pacman -Sy archlinuxcn-keyring
-##yay可以统筹aur和repos
-pacman -S yay wget
+
+
+
 
 ##显示配置
 ##nvidia
