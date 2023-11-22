@@ -22,25 +22,24 @@ passwd
 #efibootmgr --create --disk /dev/nvme0n1p1 --loader /vmlinuz-linux --label "Arch Linux" --unicode 'initrd=\intel-ucode.img initrd=\initramfs-linux.img root=/dev/nvme0n1p2 quiet rw nowatchdog'
 exit
 reboot
-##安装结束
+
+
+  
 ##用户配置
 pacman -S sudo
 useradd -m -G wheel cygauss
 passwd cygauss
 EDITOR="nano" visudo
-##仓库和yay
+##基础下载工具
 ##修改mirror和repo
 echo -e "Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch\nServer = http://mirrors.pku.edu.cn/archlinuxcn/$arch" >> /etc/pacman.d/archlinuxcn-mirrorlist
 nano /etc/pacman.conf
 pacman -Sy archlinuxcn-keyring
-##yay可以统筹aur和bin-repos,wget
+##yay可以统筹aur和repos
 pacman -S yay wget
+
 ##显示配置
 ##nvidia
-
-  
-
-
 ##为了避免更新 NVIDIA 驱动之后忘了更新 initramfs，你可以使用 Pacman Hooks：
 ##安装后把kms 从 /etc/mkinitcpio.conf 里的HOOKS 数组中移除，并 重新生成 initramfs。
 ##To enable DRM (Direct Rendering Manager) kernel mode setting, set modeset=1 and fbdev=1 kernel module parameters for the nvidia_drm module.
@@ -48,10 +47,12 @@ pacman -S yay wget
 echo "options nvidia_drm modeset=1 fbdev=1" > /etc/modprobe.d/nvidia_drm.conf
 nano /etc/mkinitcpio.conf
 cd /etc/pacman.d/hooks/
-wget  
+wget raw.githubusercontent.com/cygauss/cystems/main/archy/nvidia.hook
+cd -
 ##prime-run前缀脚本以用独显运行
 pacman -S nvidia nvidia-prime
 reboot
+
 ##wayland
 ##GUIlib
 pacman -S gtk4 qt6-wayland qt5ct
@@ -64,8 +65,10 @@ pacman -S noto-fonts-cjk fcitx5-im fcitx5-rime
 echo -e "GTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx\nSDL_IM_MODULE=fcitx\nGLFW_IM_MODULE=ibus" >> /etc/environment
 fcitx5-configtool
 ##fcitx5 -d为其运行deamon
+
 ##声音
-pacman -S pipewire wireplumber helvum alsa-utils
+pacman -S pipewire wireplumber helvum
+
 ##v2raya
 pacman -S v2raya-git
 systemctl enable v2raya.service
