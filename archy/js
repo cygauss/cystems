@@ -46,5 +46,5 @@ fcitx5-configtool
 pacman -S pipewire wireplumber helvum
 
 ##v2raya
-pacman -S v2raya-git
+pacman -S v2raya
 systemctl enable v2raya.service
