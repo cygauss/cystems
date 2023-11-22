@@ -11,4 +11,3 @@ curl -O raw.githubusercontent.com/cygauss/cystems/main/archy/nvidia.hook
 cd -
 ##prime-run前缀脚本以用独显运行
 pacman -S nvidia nvidia-prime
-reboot
