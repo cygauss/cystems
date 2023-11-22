@@ -1,0 +1,19 @@
+#为了避免更新 NVIDIA 驱动之后忘了更新 initramfs，你可以使用 Pacman Hooks,/etc/pacman.d/hooks/nvidia.hook
+#Exec 那一行看起来非常复杂，是为了避免在 nvidia 和 linux 软件包都发生更新的时候重复运行 mkinitcpio。
+#如果你觉得无所谓，可以删掉 Target=linux 以及 NeedsTargets，然后 Exec 就可以简化为 Exec=/usr/bin/mkinitcpio -P.
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=nvidia
+Target=linux
+# Change the linux part above and in the Exec line if a different kernel is used
+# 如果使用不同的内核，请更改上面的 linux 部分和 Exec 行中的内容
+
+[Action]
+Description=Update Nvidia module in initcpio
+Depends=mkinitcpio
+When=PostTransaction
+NeedsTargets
+Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /usr/bin/mkinitcpio -P'
