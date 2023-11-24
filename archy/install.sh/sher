@@ -1,4 +1,4 @@
-curl -O raw.githubusercontent.com/cygauss/cystems/main/archy/install.sh/$CYSH.sh
+curl -O https://raw.githubusercontent.com/cygauss/cystems/main/archy/install.sh/$CYSH.sh
 nano $CYSH.sh
 bash $CYSH.sh
 rm  $CYSH.sh
