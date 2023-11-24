@@ -5,7 +5,7 @@ echo -e "en_SG.UTF-8 UTF-8\nzh_CN.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo "LANG=en_SG.UTF-8" >> /etc/locale.conf
 echo "Archy" >> /etc/hostname
-#systemctl enable NetworkManager
+systemctl enable NetworkManager.service
 passwd
 #efibootmgr -Bb 0000
 #efibootmgr -Bb 0001
