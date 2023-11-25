@@ -1,4 +1,4 @@
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
 ##虽然只使用LANG=sg，但是一些软件不自带语言环境，需要locale提供，故选用中文
 echo -e "en_SG.UTF-8 UTF-8\nzh_CN.UTF-8 UTF-8" >> /etc/locale.gen
