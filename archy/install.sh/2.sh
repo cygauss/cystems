@@ -4,7 +4,7 @@ echo -e "Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/\$arch\nServer
 echo -e "[archlinuxcn]\nInclude = /etc/pacman.d/archlinuxcn-mirrorlist" >> /etc/pacman.conf
 ##yay可以统筹aur和repos
 pacman -Sy archlinuxcn-keyring
-pacman -S yay
+pacman -S yay base-devel
 ##用户配置
 pacman -S sudo
 useradd -m -G wheel cygauss
