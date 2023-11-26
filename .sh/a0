@@ -12,4 +12,5 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cp /sher /mnt
 cd /mnt
 curl -O https://raw.githubusercontent.com/cygauss/cystems/main/.sh/a01
+nano a01
 cd -
