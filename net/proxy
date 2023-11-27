@@ -1,2 +1,4 @@
+#c
 vless://e3f8c97b-a75f-403c-a2b0-ae53a7821555@$WEBSITE:443?headerType=none&security=none&type=tcp#$WEBSITE
+#r
 vless://63ece422-0799-49c9-b9ae-bd6dee2df1db@$WEBSITE:4432?type=tcp&encryption=none&security=tls&path=%2f&flow=xtls-rprx-vision#$WEBSITE
