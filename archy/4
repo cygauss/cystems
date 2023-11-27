@@ -1,6 +1,6 @@
 ##wayland
 ##GUIlib
-pacman -S gtk4 qt6-wayland qt5ct
+pacman -S gtk4 qt6-wayland qt5-wayland qt5ct
 echo -e "QT_QPA_PLATFORM=wayland\nQT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment
 
 
