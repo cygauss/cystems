@@ -1,6 +1,6 @@
 ##wayland
-##GUIlib
-pacman -S gtk4 qt6-wayland qt5-wayland qt5ct
+##GUIlib qt6ct会在环境变量设置为5时工作
+pacman -S gtk4 qt6-wayland qt5-wayland qt5ct qt6ct
 echo -e "QT_QPA_PLATFORM=wayland\nQT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment
 
 
