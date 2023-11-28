@@ -16,7 +16,7 @@ echo -e "GTK_IM_MODULE=wayland\nQT_IM_MODULE=wayland" >> /etc/environment
 ##用户配置
 useradd -m -G wheel cygauss
 cp /root/sher /home/cygauss/
-passwd cygauss
+echo "cygauss:112358" | chpasswd
 EDITOR="nano" visudo
 ##字体 in user
 pacman -S noto-fonts noto-fonts-cjk
