@@ -5,8 +5,22 @@ echo -e "[archlinuxcn]\nInclude = /etc/pacman.d/archlinuxcn-mirrorlist" >> /etc/
 ##yay可以统筹aur和repos
 pacman -Sy archlinuxcn-keyring
 pacman -S yay base-devel
+##wayland GUIlib qt6ct会在环境变量设置为5时工作
+pacman -S gtk4 qt6-wayland qt5-wayland qt5ct qt6ct qt6-base qt5-base
+echo -e "QT_QPA_PLATFORM=wayland\nQT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment
+##输入法
+pacman -S fcitx5-im fcitx5-rime
+##修改环境变量和随hyprland启动,ibus项是因为kitty,但只有这一个变量
+echo -e "GTK_IM_MODULE=wayland\nQT_IM_MODULE=wayland" >> /etc/environment
+##fcitx5-configtool配置 经典用户界面关掉Wayland分数缩放
 ##用户配置
 useradd -m -G wheel cygauss
 cp /root/sher /home/cygauss/
 passwd cygauss
 EDITOR="nano" visudo
+##字体 in user
+pacman -S noto-fonts noto-fonts-cjk
+mkdir -p /home/cygauss/.config/fontconfig
+cd /home/cygauss/.config/fontconfig
+curl -O https://raw.githubusercontent.com/cygauss/cystems/main/fonts.conf
+cd -
