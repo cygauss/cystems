@@ -15,7 +15,7 @@ echo -e "GTK_IM_MODULE=wayland\nQT_IM_MODULE=wayland" >> /etc/environment
 ##fcitx5-configtool配置 经典用户界面关掉Wayland分数缩放
 ##用户配置
 useradd -m -G wheel cygauss
-cp /root/sher /home/cygauss/
+cp /root/er.sh /home/cygauss/
 passwd cygauss
 EDITOR="nano" visudo
 ##字体 in user
