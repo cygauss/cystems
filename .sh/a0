@@ -10,7 +10,7 @@ echo -e "Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/\$repo/os/\$arch
 pacstrap -K /mnt base linux linux-firmware networkmanager efibootmgr intel-ucode nano
 genfstab -U /mnt >> /mnt/etc/fstab
 cd /mnt/root
-curl -O c1.cygauss.eu.org/er.sh
+curl -O c1.cygauss.eu.org/sher
 arch-chroot /mnt /bin/bash <<END
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
