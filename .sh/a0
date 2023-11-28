@@ -1,4 +1,3 @@
-#!/bin/bash
 #net iwctl station wlan0 connect ssid
 timedatectl
 #cfdisk /dev/nvme0n1
