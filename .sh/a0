@@ -20,7 +20,7 @@ locale-gen
 echo "LANG=en_SG.UTF-8" >> /etc/locale.conf
 echo "Archy" >> /etc/hostname
 systemctl enable NetworkManager.service
-passwd
+echo "root:112358" | chpasswd
 efibootmgr -Bb 0000
 efibootmgr -Bb 0001
 efibootmgr -Bb 0002
