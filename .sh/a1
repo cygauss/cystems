@@ -19,12 +19,13 @@ cp /root/sher /home/cygauss/
 passwd cygauss
 EDITOR="nano" visudo
 ##字体 in user
-su cygauss
 pacman -S noto-fonts noto-fonts-cjk
-mkdir -p /home/cygauss/.config/fontconfig
-cd /home/cygauss/.config/fontconfig
+su cygauss <<END
+mkdir -p .config/fontconfig
+cd .config/fontconfig
 curl -O https://raw.githubusercontent.com/cygauss/cystems/main/fonts.conf
 cd -
+END
 ##nvidia
 ##为了避免更新 NVIDIA 驱动之后忘了更新 initramfs，你可以使用 Pacman Hooks：
 ##安装后把kms 从 /etc/mkinitcpio.conf 里的HOOKS 数组中移除，并 重新生成 initramfs。
