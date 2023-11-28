@@ -31,3 +31,4 @@ efibootmgr -Bb 0002
 efibootmgr -Bb 0003
 efibootmgr -c -d /dev/nvme0n1p1 -l /vmlinuz-linux -L "Arch Linux" -u 'initrd=\intel-ucode.img initrd=\initramfs-linux.img root=/dev/nvme0n1p2 quiet rw nowatchdog'
 END
+reboot
