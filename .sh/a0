@@ -15,3 +15,8 @@ cd /mnt
 curl -O https://raw.githubusercontent.com/cygauss/cystems/main/.sh/a01
 nano a01
 cd -
+arch-chroot /mnt /bin/bash <<END
+command 1 &&
+command 2 &&
+pacman -S base-devel
+END
