@@ -19,6 +19,7 @@ cp /root/sher /home/cygauss/
 passwd cygauss
 EDITOR="nano" visudo
 ##字体 in user
+su cygauss
 pacman -S noto-fonts noto-fonts-cjk
 mkdir -p /home/cygauss/.config/fontconfig
 cd /home/cygauss/.config/fontconfig
