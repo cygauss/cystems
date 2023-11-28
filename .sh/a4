@@ -1,0 +1,8 @@
+sudo pacman -S v2raya sway foot firefox kitty
+systemctl enable v2raya.service --now
+sway --unsupported-gpu
+sudo pacman -Rs sway foot
+yay sway-im-git
+mkdir .config/sway
+cp /etc/sway/config .config/sway
+nano /etc/sway/config
