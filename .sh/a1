@@ -6,8 +6,7 @@ echo -e "[archlinuxcn]\nInclude = /etc/pacman.d/archlinuxcn-mirrorlist" >> /etc/
 pacman -Sy archlinuxcn-keyring
 pacman -S yay base-devel
 ##用户配置
-pacman -S sudo
 useradd -m -G wheel cygauss
-cp /root/sher ~/
+cp /root/sher /home/cygauss/
 passwd cygauss
 EDITOR="nano" visudo
