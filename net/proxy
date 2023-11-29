@@ -1,4 +1,4 @@
 #c
-vless://e3f8c97b-a75f-403c-a2b0-ae53a7821555@$WEBSITE:443?headerType=none&security=none&type=tcp#$WEBSITE
+vless://2075f50c-dd8e-4515-9547-cb716918f6db@$WEBSITE:443?allowInsecure=false&flow=xtls-rprx-vision&fp=chrome&headerType=none&pbk=5vQcZiYWg4W4RymvMaIxGam7fWbDcrH-FdW0Vz0Jcyo&security=reality&sni=www.amazon.com&type=tcp#$WEBSITE
 #r
 vless://63ece422-0799-49c9-b9ae-bd6dee2df1db@$WEBSITE:4432?type=tcp&encryption=none&security=tls&path=%2f&flow=xtls-rprx-vision#$WEBSITE
