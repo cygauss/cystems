@@ -1,0 +1,13 @@
+curl -O https://raw.githubusercontent.com/cygauss/cystems/main/.sh/$@
+for((i=2;i==2;))
+do
+nano $@
+read -p "1.bash 2.nano 3.delect (else=keep): " i
+if [ $i -eq 1 ];then
+bash $@
+rm $@
+fi
+if [ $i -eq 3 ];then
+rm $@
+fi
+done
