@@ -1,4 +1,4 @@
-curl -O https://raw.githubusercontent.com/cygauss/cystems/main/.sh/$@
+curl -O https://c.cygauss.eu.org/$@
 for((i=2;i==2;))
 do
 nano $@
