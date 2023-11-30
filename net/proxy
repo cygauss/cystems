@@ -1,4 +1,2 @@
-#c
-vless://2075f50c-dd8e-4515-9547-cb716918f6db@$WEBSITE:443?allowInsecure=false&flow=xtls-rprx-vision&fp=chrome&headerType=none&pbk=5vQcZiYWg4W4RymvMaIxGam7fWbDcrH-FdW0Vz0Jcyo&security=reality&sni=www.amazon.com&type=tcp#$WEBSITE
-#r
-vless://63ece422-0799-49c9-b9ae-bd6dee2df1db@$WEBSITE:4432?type=tcp&encryption=none&security=tls&path=%2f&flow=xtls-rprx-vision#$WEBSITE
+vless://2075f50c-dd8e-4515-9547-cb716918f6db@$WEBSITE:443?allowInsecure=false&flow=xtls-rprx-vision&fp=chrome&headerType=none&pbk=5vQcZiYWg4W4RymvMaIxGam7fWbDcrH-FdW0Vz0Jcyo&security=reality&sni=www.amazon.com&type=tcp#C
+vless://79632bc7-c1ae-43c6-8d66-a513f3916d76@$WEBSITE:443?allowInsecure=false&flow=xtls-rprx-vision&fp=chrome&headerType=none&pbk=eFTnx7NqYgV1JMxaHhA1xbFsJGJFfoVUg81jG_5dhBY&security=reality&sni=www.amazon.com&type=tcp#R
