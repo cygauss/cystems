@@ -1,3 +1,4 @@
+#MOZ_ENABLE_WAYLAND=1
 sudo pacman -S v2raya sway foot firefox kitty
 systemctl enable v2raya.service --now
 sway --unsupported-gpu
